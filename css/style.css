@@ -1,0 +1,60 @@
+* {
+  font-family: "PT Sans Caption", sans-serif;
+}
+.bookmark {
+  background-color: #f7ecde;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  font-family: "Pacifico", cursive;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  font-size: 3.1rem;
+}
+h1::after {
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  background-color: #fec260;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.3s all;
+}
+h1:hover::after {
+  height: 60%;
+}
+.head-text {
+  border-bottom: dotted 3px;
+  border-top: dotted 3px;
+}
+h2 {
+  background-image: linear-gradient(
+    to right,
+    rgb(77, 151, 108),
+    rgb(194, 181, 71)
+  );
+  font-family: "Righteous", sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Submit {
+  background-color: #cc5f41;
+  transition: 0.3s all;
+  width: 150px;
+  border: none;
+}
+.Submit:hover {
+  background-color: rgb(209, 81, 45);
+}
+
+input:focus {
+  border: rgb(209, 81, 45) !important;
+  outline: none !important;
+  box-shadow: 0 0 2px 0.25rem rgba(209, 81, 45, 0.25) !important;
+}

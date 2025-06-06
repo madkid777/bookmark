@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Bookmark</title>
+  </head>
+  <body>
+    <div class="bookmark w-100 vh-100">
+      <div class="py-2 text-center">
+        <h1>Bookmarker</h1>
+      </div>
+      <div class="head-text w-75 container py-4 my-4">
+        <h2 class="text-center">
+          <i class="fa-solid fa-bookmark me-1"></i>Bookmark your favorite
+          sites<i class="fa-solid fa-bookmark ms-1"></i>
+        </h2>
+        <div class="mb-3">
+          <label for="Email" class="form-label"
+            ><i class="fa-solid fa-book me-2"></i> Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="Email"
+            placeholder="Bookmark Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="URL" class="form-label"
+            ><i class="fa-solid fa-link me-2"></i>Site URl</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="URL"
+            placeholder="Website URL"
+          />
+        </div>
+        <div class="mb-3 text-center">
+          <button class="text-white Submit btn" onclick="addSite()">
+            Submit
+          </button>
+        </div>
+      </div>
+      <table class="w-75 text-center mx-auto bg-white">
+        <thead class="rounded-2 border-bottom">
+          <th class="p-2">index</th>
+          <th class="p-2">Website Name</th>
+          <th class="p-2">Visit</th>
+          <th class="p-2">Delete</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
