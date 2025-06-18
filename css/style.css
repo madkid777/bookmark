@@ -59,9 +59,7 @@ input:focus {
   outline: none !important;
   box-shadow: 0 0 2px 0.25rem rgba(233, 64, 17, 0.7) !important;
 }
-.inline #warining {
-  color: #dc3545;
-}
+
 .boxShadowGreen {
   border: 1px rgba(14, 172, 48, 0.7) solid !important;
 }
@@ -74,6 +72,11 @@ input:focus {
 .boxShadowRed:focus {
   box-shadow: 0 0 2px 0.25rem rgba(255, 65, 65, 0.7) !important;
 }
-.inline #check {
+.inline #warining,
+.inline #wariningEmail {
+  color: #dc3545;
+}
+.inline #check,
+.inline #checkEmail {
   color: green;
 }

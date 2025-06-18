@@ -2,12 +2,27 @@ var Email =document.getElementById("Email")
 var url =document.getElementById("URL")
 var check = document.getElementById("check")
 var warining =document.getElementById("warining")
+var checkEmail = document.getElementById("checkEmail")
+var wariningEmail =document.getElementById("wariningEmail")
+
 var sites=[]
 if(localStorage.getItem("sites")!==null){
   sites=  JSON.parse(localStorage.getItem("sites"))
      display()
 }
 function addSite(){
+     var emailRegex = /^[a-zA-Z0-9]{3,}$/;
+    var urlRegex = /^[a-zA-Z0-9]{1,}\.[a-zA-Z0-9]{2,}$/;
+
+    var emailValid = emailRegex.test(Email.value);
+    var urlValid = urlRegex.test(url.value);
+
+    if (!emailValid || !urlValid) {
+        alert("Please enter valid email and URL.");
+        validteEmail();
+        validteSite();
+        return; 
+    }
     var site={
         emailAdress:Email.value, 
         siteURl:url.value, 
@@ -30,6 +45,7 @@ for(var i=0;i<sites.length;i++){
     </tr>   `
 }
 document.getElementById("tbody").innerHTML = box
+
 }
 function clear(){
     Email.value=""
@@ -41,7 +57,11 @@ sites.splice(index,1)
 localStorage.setItem("sites",JSON.stringify(sites))
 display()
 }
-
+function clearValid(){
+     check.classList.add("d-none")
+       warining.classList.add("d-none")
+       Email.classList.remove("boxShadowGreen")
+}
 function validteEmail(){
     var regex=/^[a-zA-z0-9]{3,}$/
     var TestEmail=Email.value
@@ -49,26 +69,31 @@ function validteEmail(){
        check.classList.remove("d-none")
        warining.classList.add("d-none")
        Email.classList.add("boxShadowGreen")
-       
+       Email.classList.remove("boxShadowRed")
+
         }else{
         check.classList.add("d-none")
         warining.classList.remove("d-none")
-        Email.classList.replace("boxShadowGreen","boxShadowRed")
+        Email.classList.remove("boxShadowGreen")
+       Email.classList.add("boxShadowRed")
     }
-    display()
+   
 }
+
 function validteSite(){
     var regex=/^[a-zA-z0-9]{1,}\.[a-zA-z0-9]{2,}$/
     var testURl=url.value
     if(regex.test(testURl)===true){
-       check.classList.remove("d-none")
-       warining.classList.add("d-none")
-       url.classList.add("boxShadowGreen")
-       
+       checkEmail.classList.remove("d-none")
+       wariningEmail.classList.add("d-none")
+            url.classList.add("boxShadowGreen")
+       url.classList.remove("boxShadowRed")
+
         }else{
-        check.classList.add("d-none")
-        warining.classList.remove("d-none")
-        url.classList.replace("boxShadowGreen","boxShadowRed")
+        checkEmail.classList.add("d-none")
+        wariningEmail.classList.remove("d-none")
+        url.classList.remove("boxShadowGreen")
+       url.classList.add("boxShadowRed")
     }
-    display()
+
 }
