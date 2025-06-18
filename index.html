@@ -15,6 +15,37 @@
     <title>Bookmark</title>
   </head>
   <body>
+    <div
+      id="pop-up"
+      class="pop-up w-100 bg-black bg-opacity-50 position-absolute vh-100 z-3 d-none justify-content-center align-items-center"
+    >
+      <div class="pop-box p-4 position-relative">
+        <div class="inner w-100">
+          <div class="headPop mb-3">
+            <div class="dots position-absolute p-1 ms-2">
+              <i class="fa-solid fa-circle-dot text-danger"></i>
+              <i class="fa-solid fa-circle-dot text-warning"></i>
+              <i class="fa-solid fa-circle-dot text-success"></i>
+            </div>
+            <button onclick="closeElement()" class="btn position-absolute">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+          <h4 class="fs-4 mb-3">
+            Site Name or Url is not valid, Please follow the rules below :
+          </h4>
+
+          <p>
+            <i class="fa-solid fa-arrow-right me-2"></i>Site name must contain
+            at least 3 characters
+          </p>
+          <p>
+            <i class="fa-solid fa-arrow-right me-2"></i>Site URL must be a valid
+            one
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="bookmark w-100 vh-100">
       <div class="py-2 text-center">
         <h1>Bookmarker</h1>

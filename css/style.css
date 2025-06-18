@@ -80,3 +80,25 @@ input:focus {
 .inline #checkEmail {
   color: green;
 }
+
+.pop-box {
+  background-color: #ffffff;
+  width: 600px;
+  height: 200px;
+  border-radius: 5px;
+}
+.pop-box p i {
+  color: rgb(209, 81, 45);
+  border-radius: 50%;
+  border: 2px solid rgb(209, 81, 45);
+  padding: 2px;
+}
+.pop-box button {
+  top: 0;
+  right: 0;
+  color: rgb(122, 117, 117);
+}
+.pop-box .dots {
+  top: 0;
+  left: 0;
+}

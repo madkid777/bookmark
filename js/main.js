@@ -4,7 +4,7 @@ var check = document.getElementById("check")
 var warining =document.getElementById("warining")
 var checkEmail = document.getElementById("checkEmail")
 var wariningEmail =document.getElementById("wariningEmail")
-
+var popUp=document.getElementById("pop-up")
 var sites=[]
 if(localStorage.getItem("sites")!==null){
   sites=  JSON.parse(localStorage.getItem("sites"))
@@ -18,7 +18,7 @@ function addSite(){
     var urlValid = urlRegex.test(url.value);
 
     if (!emailValid || !urlValid) {
-        alert("Please enter valid email and URL.");
+        popEle()
         validteEmail();
         validteSite();
         return; 
@@ -50,6 +50,12 @@ document.getElementById("tbody").innerHTML = box
 function clear(){
     Email.value=""
     url.value=""
+    Email.classList.remove("boxShadowGreen", "boxShadowRed");
+    url.classList.remove("boxShadowGreen", "boxShadowRed");
+    check.classList.add("d-none");
+    warining.classList.add("d-none");
+    checkEmail.classList.add("d-none");
+    wariningEmail.classList.add("d-none");
 }
 
 function deleteItem(index){
@@ -96,4 +102,10 @@ function validteSite(){
        url.classList.add("boxShadowRed")
     }
 
+}
+function popEle(){
+    popUp.classList.replace("d-none","d-flex")
+}
+function closeElement(){
+   popUp.classList.replace("d-flex","d-none")
 }
