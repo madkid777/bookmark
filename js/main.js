@@ -1,5 +1,7 @@
 var Email =document.getElementById("Email")
 var url =document.getElementById("URL")
+var check = document.getElementById("check")
+var warining =document.getElementById("warining")
 var sites=[]
 if(localStorage.getItem("sites")!==null){
   sites=  JSON.parse(localStorage.getItem("sites"))
@@ -40,10 +42,33 @@ localStorage.setItem("sites",JSON.stringify(sites))
 display()
 }
 
-function validte(){
+function validteEmail(){
     var regex=/^[a-zA-z0-9]{3,}$/
-    var my=Email.value
-    if(regex.test(my)){
-console.log("mohamed")
+    var TestEmail=Email.value
+    if(regex.test(TestEmail)===true){
+       check.classList.remove("d-none")
+       warining.classList.add("d-none")
+       Email.classList.add("boxShadowGreen")
+       
+        }else{
+        check.classList.add("d-none")
+        warining.classList.remove("d-none")
+        Email.classList.replace("boxShadowGreen","boxShadowRed")
     }
+    display()
+}
+function validteSite(){
+    var regex=/^[a-zA-z0-9]{1,}\.[a-zA-z0-9]{2,}$/
+    var testURl=url.value
+    if(regex.test(testURl)===true){
+       check.classList.remove("d-none")
+       warining.classList.add("d-none")
+       url.classList.add("boxShadowGreen")
+       
+        }else{
+        check.classList.add("d-none")
+        warining.classList.remove("d-none")
+        url.classList.replace("boxShadowGreen","boxShadowRed")
+    }
+    display()
 }

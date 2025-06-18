@@ -52,9 +52,28 @@ h2 {
 .Submit:hover {
   background-color: rgb(209, 81, 45);
 }
-
-input:focus {
+input {
   border: rgb(209, 81, 45) !important;
+}
+input:focus {
   outline: none !important;
-  box-shadow: 0 0 2px 0.25rem rgba(209, 81, 45, 0.25) !important;
+  box-shadow: 0 0 2px 0.25rem rgba(233, 64, 17, 0.7) !important;
+}
+.inline #warining {
+  color: #dc3545;
+}
+.boxShadowGreen {
+  border: 1px rgba(14, 172, 48, 0.7) solid !important;
+}
+.boxShadowGreen:focus {
+  box-shadow: 0 0 2px 0.25rem rgba(14, 172, 48, 0.7) !important;
+}
+.boxShadowRed {
+  border: 1px rgba(255, 65, 65, 0.7) solid !important;
+}
+.boxShadowRed:focus {
+  box-shadow: 0 0 2px 0.25rem rgba(255, 65, 65, 0.7) !important;
+}
+.inline #check {
+  color: green;
 }
