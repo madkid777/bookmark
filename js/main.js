@@ -108,4 +108,5 @@ function popEle(){
 }
 function closeElement(){
    popUp.classList.replace("d-flex","d-none")
+   
 }
