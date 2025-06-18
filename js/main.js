@@ -39,3 +39,11 @@ sites.splice(index,1)
 localStorage.setItem("sites",JSON.stringify(sites))
 display()
 }
+
+function validte(){
+    var regex=/^[a-zA-z0-9]{3,}$/
+    var my=Email.value
+    if(regex.test(my)){
+console.log("mohamed")
+    }
+}
